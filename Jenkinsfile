@@ -32,7 +32,7 @@ pipeline {
             steps{
 
                 sh 'cat ./k8s/deployment.yaml'
-                sh "sed -i 's/${APP_NAME}.*/${APP_NAME}:${IMAGE_TAG}/g' ./k8s/deployment.yaml"
+                sh "sed -i '' 's/${APP_NAME}.*/${APP_NAME}:${IMAGE_TAG}/g' ./k8s/deployment.yaml"
                 sh 'cat ./k8s/deployment.yaml'
 
                 sh 'git config --global user.email shashidas95@gmail.com'
