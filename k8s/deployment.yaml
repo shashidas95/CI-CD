@@ -1,21 +1,22 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: eticket-fe:21
+  name: frontend-deployment
   labels:
-    app: eticket-fe:21
+    app: frontend
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: eticket-fe:21
+      app: frontend
   template:
     metadata:
       labels:
-        app: eticket-fe:21
+        app: frontend
     spec:
       containers:
-        - name: eticket-fe:21
+        - name: frontend
           image: shashidas/eticket-fe:21
           ports:
             - containerPort: 3000
